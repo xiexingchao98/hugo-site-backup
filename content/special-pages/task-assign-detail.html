@@ -1,0 +1,93 @@
+---
+title: "翻译任务分配"
+date: 2019-03-12
+summary: " "
+type: "special-page"
+layout: "single"
+---
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>任务分配详情</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css">
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.common.dev.js"></script>
+</head>
+<body>
+    <section class="hero is-info is-bold">
+    <div class="hero-body">
+        <div class="container">
+        <h1 class="title">
+            翻译任务分配
+        </h1>
+        <h2 class="subtitle">
+            51人
+        </h2>
+        </div>
+    </div>
+    </section>
+    <div class="container" style="margin-top: 1rem;">
+        <table id="book-table" class="table is-bordered is-fullwidth">
+            <caption>书本说明</caption>
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>书名</th>
+                    <th>总页数</th>
+                    <th>跳过页码</th>
+                    <th>原因</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="book in books">
+                    <td>{{book.id}}</td>
+                    <td>{{book.name}}</td>
+                    <td>{{book.page}}</td>
+                    <td>{{book.skip.start}}-{{book.skip.end}}</td>
+                    <td>{{book.skip.reason}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="task-table" class="table is-hoverable is-bordered is-fullwidth">
+            <caption>任务分配详情</caption>
+            <thead>
+                <tr>
+                    <th>学号</th>
+                    <th>名字</th>
+                    <th>任务</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="student in students">
+                    <td>{{student.id}}</td>
+                    <td>{{student.name}}</td>
+                    <td><p v-for="task in student.task">{{"书本：" + task.book + "\t--->\t"+ "页面：" + task.page}}</p></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>生成于 2019/3/12</p>
+        </div>
+    </footer>
+    <script>
+        let students = [{"task":[{"book":"1","page":"5-14"}],"name":"秦镇","id":"20162255"},{"task":[{"book":"1","page":"15-24"}],"name":"曹会鹏","id":"20162256"},{"task":[{"book":"1","page":"25-34"}],"name":"夏侯璐琪","id":"20162257"},{"task":[{"book":"1","page":"35-44"}],"name":"熊雯欣","id":"20162258"},{"task":[{"book":"1","page":"45-54"}],"name":"姚水林","id":"20162259"},{"task":[{"book":"1","page":"55-64"}],"name":"张逸杰","id":"20162260"},{"task":[{"book":"1","page":"65-74"}],"name":"吕强","id":"20162261"},{"task":[{"book":"1","page":"75-84"}],"name":"陈海洋","id":"20162262"},{"task":[{"book":"1","page":"85-94"}],"name":"岳彭瑾","id":"20162263"},{"task":[{"book":"1","page":"95-104"}],"name":"冷峰","id":"20162264"},{"task":[{"book":"1","page":"105-114"}],"name":"徐鹏","id":"20162265"},{"task":[{"book":"1","page":"115-124"}],"name":"谈恩福","id":"20162266"},{"task":[{"book":"1","page":"125-134"}],"name":"詹彬彬","id":"20162267"},{"task":[{"book":"1","page":"135-144"}],"name":"黄杰","id":"20162269"},{"task":[{"book":"1","page":"145-154"}],"name":"帅文凯","id":"20162270"},{"task":[{"book":"1","page":"155-164"}],"name":"罗震","id":"20162271"},{"task":[{"book":"1","page":"165-174"}],"name":"杨柳清","id":"20162272"},{"task":[{"book":"1","page":"175-184"}],"name":"黄系盟","id":"20162273"},{"task":[{"book":"1","page":"185-194"}],"name":"周倩","id":"20162274"},{"task":[{"book":"1","page":"195-204"}],"name":"谌涛","id":"20162275"},{"task":[{"book":"1","page":"205-214"}],"name":"张颖","id":"20162276"},{"task":[{"book":"1","page":"215-224"}],"name":"万宇辰","id":"20162277"},{"task":[{"book":"1","page":"225-234"}],"name":"徐勇晖","id":"20162278"},{"task":[{"book":"1","page":"235-244"}],"name":"陈玲","id":"20162279"},{"task":[{"book":"1","page":"245-254"}],"name":"谢非","id":"20162280"},{"task":[{"book":"1","page":"255-264"}],"name":"谢星超","id":"20162281"},{"task":[{"book":"1","page":"265-274"}],"name":"余国钱","id":"20162282"},{"task":[{"book":"1","page":"275-284"}],"name":"赵光明","id":"20162283"},{"task":[{"book":"1","page":"285-294"}],"name":"蔡杰","id":"20162284"},{"task":[{"book":"1","page":"295-304"}],"name":"陈鑫","id":"20162285"},{"task":[{"book":"1","page":"305-314"}],"name":"方杰威","id":"20162286"},{"task":[{"book":"1","page":"315-324"}],"name":"袁倩萍","id":"20162287"},{"task":[{"book":"1","page":"325-334"}],"name":"段雄文","id":"20162288"},{"task":[{"book":"1","page":"335-344"}],"name":"郑淳皓","id":"20162289"},{"task":[{"book":"1","page":"345-354"}],"name":"刘鸿杰","id":"20162290"},{"task":[{"book":"1","page":"355-364"}],"name":"沈永威","id":"20162291"},{"task":[{"book":"1","page":"365-374"}],"name":"周金鑫","id":"20162292"},{"task":[{"book":"1","page":"375-384"}],"name":"邓际斌","id":"20162293"},{"task":[{"book":"1","page":"385-394"}],"name":"刘剑平","id":"20162294"},{"task":[{"book":"1","page":"395-404"}],"name":"王斌","id":"20162295"},{"task":[{"book":"1","page":"405-414"}],"name":"熊永江","id":"20162296"},{"task":[{"book":"1","page":"415-424"}],"name":"文嘉灿","id":"20162297"},{"task":[{"book":"1","page":"425-434"}],"name":"梁雪琪","id":"20162298"},{"task":[{"book":"1","page":"435-444"}],"name":"陈鑫迪","id":"20162299"},{"task":[{"book":"1","page":"445-452"},{"book":"2","page":"4-5"}],"name":"周博文","id":"20162300"},{"task":[{"book":"2","page":"6-15"}],"name":"徐东成","id":"20162301"},{"task":[{"book":"2","page":"16-25"}],"name":"李根冲","id":"20162302"},{"task":[{"book":"2","page":"26-35"}],"name":"杜鸿飞","id":"20162303"},{"task":[{"book":"2","page":"36-45"}],"name":"朱光燕","id":"20162304"},{"task":[{"book":"2","page":"46-55"}],"name":"宗义","id":"20152097"},{"task":[{"book":"2","page":"56-62"},{"book":"3","page":"3-5"}],"name":"刘广亚","id":"20160001"}];
+        let task = new Vue({
+            el: "#task-table",
+            data: {
+                students
+            }
+        });
+        let books = [{"id":"1","name":"[Bernardo_Leal,_Luigi_Atzori_(auth.),_Daniel_Giust(z-lib.org)","page":452,"skip":{"start":1,"end":4,"reason":"封面"}},{"id":"2","name":"[Sean_Dodson_and_Rob_van_Kranenburg]_The_Internet_(z-lib.org)","page":62,"skip":{"start":1,"end":3,"reason":"封面"}},{"id":"3","name":"[Vermesan_Ovidiu,_Mark_Harrison,_Harald_Vogt,_Kost(z-lib.org)","page":50,"skip":{"start":1,"end":2,"reason":"封面"}}];
+        let book = new Vue({
+            el: "#book-table",
+            data: {
+                books
+            }
+        });
+    </script>
+</body>
+</html>
