@@ -7,7 +7,7 @@ layoutdir: "layouts"
 publishdir: "public"
 enableEmoji: true
 hasCJKLanguage: true
-summaryLength: 150
+summaryLength: 100
 Paginate: 3
 DefaultContentLanguage: "cn"
 

@@ -2,7 +2,7 @@
   
   <a href="{{ .Permalink }}">
     <div class="post-header text-center">
-      <div class="px-4 post-heading">{{ .Title }}</div>
+      <h2 class="px-4 post-heading">{{ .Title }}</h2>
       <ul class="post-meta li-x mt-1">
         {{ if and .Site.Params.dateformfull .Site.Params.dateform }}
           <li>{{ .Date.Format .Site.Params.dateform }}</li>

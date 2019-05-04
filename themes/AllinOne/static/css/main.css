@@ -17,8 +17,13 @@
   --grey-d3: #4b4b4b;
   --grey-d4: #333333;
 
-  --link-color: #428bca;
-  --active-color: #38849e;
+  /* --link-color: #428bca; */
+  --link-color: hsl(204, 86%, 53%);
+
+  /* --active-color: #38849e; */
+  --active-color: hsl(204, 86%, 53%);
+
+
 
   --text-dark: #333333;
   --text-grey: #646464;
@@ -248,7 +253,7 @@ footer .copyright {
   overflow: hidden;
   /* background-color: rgba(0, 0, 0, 0.2); */
   /* color: rgba(255, 255, 255, 0.6); */
-  color: var(--text-light);
+  color: #000;
   font-size: 0.875rem;
 }
 
