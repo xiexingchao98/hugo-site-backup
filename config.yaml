@@ -9,7 +9,6 @@ enableEmoji: true
 hasCJKLanguage: true
 summaryLength: 100
 Paginate: 3
-DefaultContentLanguage: "cn"
 
 theme: "AllinOne"
 title: "xiexc's blog"
@@ -29,6 +28,10 @@ taxonomies:
 
 menu:
   main:
+  - name: "归档"
+    weight: -130
+    identifier: "archives"
+    url: "/pages/archives/"   
   - name: "下载"
     weight: -120
     identifier: "download"
@@ -40,8 +43,8 @@ params:
   author: "xiexc"
   description: 
     - "会坚持做自己感兴趣，并且觉得有意义的事情"           # appears in the site header when set to a non-empty string
-  #welcome_head             = "Hello, World!"
-  #welcome_word             = "~ No Day But Today ~"
+  #welcome_head: "Hello, World!"
+  #welcome_word: "最新动态"
 
   latestpostscount: 3                             # how many posts to display on the home page
   bloggroupby: "month"
@@ -72,9 +75,3 @@ params:
   
   # analytics
   #googleAnalytics          = "your-google-analytic-id"
-    
-languages:
-  cn:
-    weight: 1
-  en:
-    weight: 2
