@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    {{ partial "page-head.html" . }}
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    {{ partial "page-header.html" . }}
+    <main class="mdl-layout__content">
+      {{ block "main__content" . }}
+      {{ end }}
+      {{ partial "page-footer.html" . }}
+    </main>
+  </div>
+  {{ partial "page-script.html" . }}
+</body>
+</html>

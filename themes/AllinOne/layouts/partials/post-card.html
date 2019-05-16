@@ -1,38 +1,33 @@
-<div class="post-wrapper white-bg post-card">
-  
-  <a href="{{ .Permalink }}">
-    <div class="post-header text-center">
-      <h2 class="px-4 post-heading">{{ .Title }}</h2>
-      <ul class="post-meta li-x mt-1">
-        {{ if and .Site.Params.dateformfull .Site.Params.dateform }}
-          <li>{{ .Date.Format .Site.Params.dateform }}</li>
-        {{ else }}
-          <li>{{ .Date.Format "Jan 2, 2006" }}</li>
-        {{ end }}
-    
-        {{ if not .Site.Params.noshowreadtime }}
-          <li class="middot"></li>
-          <li>{{ i18n "readingTime" .ReadingTime }}</li>
-        {{ end }}
-      </ul>
-    </div>
-    {{ with .Params.img }}
-    
-      <div class="view">
-        <img src="{{ . | absURL }}" />
-      </div>
-    {{ end }}
+<div class="mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">{{ .Title }}</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+      {{ if and .Site.Params.dateformfull .Site.Params.dateform }}
+        {{ .Date.Format .Site.Params.dateform }}
+      {{ else }}
+        {{ .Date.Format "Jan 2, 2006" }}
+      {{ end }}
+  </div>
+    <!-- {{ if not .Site.Params.noshowreadtime }}
+      <li class="middot"></li>
+      <li>{{ i18n "readingTime" .ReadingTime }}</li>
+    {{ end }} -->
+  <div class="mdl-card__supporting-text">
+      {{ if .Params.summary }}
+        {{ .Params.summary| plainify | htmlUnescape  }}
+      {{ else if .Summary }}
+        {{ .Summary | plainify | htmlUnescape }}......
+      {{ else }}
+        "……"
+      {{ end }}
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored" href="{{ .Permalink }}">查看</a>
+  </div>
+</div>
 
-    {{ if .Params.summary }}
-      {{ .Params.summary| plainify | htmlUnescape  }}
-    {{ else }}
-      {{ .Summary | plainify | htmlUnescape }}......
-    {{ end }}
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
+  <!-- <div class="post-meta li-x mt-2 div-x">
     <div>
       {{ if .Params.categories }}
         {{ range .Params.categories }}
@@ -51,6 +46,4 @@
         {{ partial "tags.html" . }}
       {{ end }}
     </div>
-  </div>
-
-</div>
+  </div> -->

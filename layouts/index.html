@@ -1,0 +1,11 @@
+{{ define "main__content" }}
+<div class="post-card__container">
+  {{ $totalpostscount := len (.Data.Pages) }}
+  {{ $latestpostscount := .Site.Params.latestpostscount | default $totalpostscount }}
+  {{ if gt $latestpostscount 0 }}
+    {{ range (first $latestpostscount .Data.Pages.ByPublishDate.Reverse ) }}
+        {{ partial "post-card.html" . }}
+    {{ end }}
+  {{ end }}
+</div>
+{{ end }}

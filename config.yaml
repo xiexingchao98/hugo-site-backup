@@ -9,7 +9,7 @@ enableEmoji: true
 hasCJKLanguage: true
 summaryLength: 100
 Paginate: 3
-DefaultContentLanguage: "cn"
+enableGitInfo: true
 
 theme: "AllinOne"
 title: "xiexc's blog"
@@ -27,24 +27,28 @@ taxonomies:
   category: "categories"
 
 
-menu:
+menus:
   main:
+  - name: "归档"
+    weight: -130
+    identifier: "archive"
+    url: "/pages/archive/"
   - name: "下载"
     weight: -120
     identifier: "download"
-    url: "http://d.xiexingchao.ink/" 
+    url: "http://d.xiexingchao.ink/"
 
 params:
   #faviconfile              = "img/avatar.png"               # from static/
-  avatar: "img/avatar.png"             # path to image in static dir e.g img/avatar.png 
+  avatar: "img/avatar.png"             # path to image in static dir e.g img/avatar.png
   author: "xiexc"
-  description: 
+  description:
     - "会坚持做自己感兴趣，并且觉得有意义的事情"           # appears in the site header when set to a non-empty string
-  #welcome_head             = "Hello, World!"
-  #welcome_word             = "~ No Day But Today ~"
+  #welcome_head: "Hello, World!"
+  #welcome_word: "最新动态"
 
-  latestpostscount: 3                             # how many posts to display on the home page
-  bloggroupby: "month"
+  latestpostscount: 5                             # how many posts to display on the home page
+  bloggroupby: "year"
   dateform: "Jan 2, 2006"
   dateformfull: "2006-01-02  Monday  15:04:05"
   noshowreadtime: false                         # if true, don't show "<x> minutes read" in posts
@@ -53,7 +57,7 @@ params:
   slidesDirPath: "themes/AllinOne/static/img/header-slides"    # path to image in local dir (path for hugo)
   slidesDirPathURL: "img/header-slides"    # path to image in static dir (for static pages)
 
-  # highlighting 
+  # highlighting
   highlightjs: true
 
   # latex
@@ -65,16 +69,10 @@ params:
   #linkedin                 = "//linkedin.com/in/you"
   #facebook                 = "//facebook.com/you"
   #googleplus               = "//google.com/you"
-  #twitter                  = "//twitter.com/you" 
+  #twitter                  = "//twitter.com/you"
   #px500                    = "//px500"
   #instagram                = "//instagram.com/you"
   #include_rss              = true                          # include RSS <link> tag in <head> and show RSS icon
-  
+
   # analytics
   #googleAnalytics          = "your-google-analytic-id"
-    
-languages:
-  cn:
-    weight: 1
-  en:
-    weight: 2

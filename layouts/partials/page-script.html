@@ -1,0 +1,5 @@
+<script src='{{ "mdl/material.min.js" | absURL }}'/></script>
+{{ if .Site.Params.highlightjs }}
+  <script src="{{ "js/vendors/highlight.pack.js" | absURL }}"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+{{ end }}

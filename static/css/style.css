@@ -1,0 +1,255 @@
+:root {
+  --grey-l4: #f7f7f7;
+  --grey-l3: #dedede;
+  --grey-l2: #c6c6c6;
+  --grey-l1: #adadad;
+  --grey:#959595;
+  --grey-d1: #7c7c7c;
+  --grey-d2: #646464;
+  --grey-d3: #4b4b4b;
+  --grey-d4: #333333;
+
+  /* --link-color: #428bca; */
+  --link-color: hsl(204, 86%, 53%);
+
+  /* --active-color: #38849e; */
+  --active-color: hsl(204, 86%, 53%);
+
+
+
+  --text-dark: #333333;
+  --text-grey: #646464;
+  --text-light: #959595;
+}
+
+@media screen and (max-width: 768px) {
+  .mdl-layout__header .mdl-navigation {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+  .post-card__container .mdl-card {
+    min-width: 400px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .post-card__container .mdl-card {
+    min-width: 800px;
+  }
+}
+
+.post-card__container .mdl-card {
+  margin: .875rem 0;
+}
+
+.has-background-info {
+  background-color: hsl(204, 86%, 53%);
+}
+.top-nav-collapse {
+  background-color: hsl(204, 68%, 54%);
+}
+.page-footer {
+  color: #000;
+  background-color: transparent;
+  /* background-color: hsl(0, 0%, 21%); */
+}
+footer.page-footer a {
+  color: var(--link-color);
+}
+.social-icon-list a {
+  font-size: 1.5rem;
+}
+
+.sidebar-entry {
+  position: sticky;
+  top: 1px;
+}
+
+.mdl-navigation__link.is-active {
+  box-shadow: inset 0 -4px white;
+}
+
+.post__header {
+  border-bottom: 1px dashed lightgray;
+}
+
+.post__header__title {
+
+}
+
+.post__header__subtitle {
+  color: #666;
+}
+
+.posts {
+  justify-content: center;
+}
+
+.post-card__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+/*
+
+Markdown
+
+*/
+
+.markdown h1, .markdown h2, .markdown h3,
+.markdown h4, .markdown h5, .markdown h6 {
+  font-weight: 500;
+}
+
+.markdown h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.8rem;
+  margin-top: 2.3rem;
+}
+
+.markdown h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.markdown h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1.2rem;
+  margin-top: 1.7rem;
+}
+
+.markdown h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1.25rem;
+}
+
+.markdown h5 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  margin-top: 1.25rem;
+}
+
+.markdown h6 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1.25rem;
+}
+
+.markdown b, .markdown strong {
+  font-weight: 600;
+}
+
+/* like a key */
+.markdown wrap {
+  border-radius: 7px;
+  padding: .15em .5em;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  /* border: 1px solid #ebebeb; */
+  border: 1px solid var(--grey-l3);
+  /* background: #f8f8f8; */
+  background: var(--grey-l4);
+  font-size: 87.5%;
+}
+
+.markdown pre, .markdown code {
+  /* background-color: #f7f7f7; */
+  background-color: var(--grey-l4);
+  /* font-size: 1rem; */
+}
+
+/* enclosed by single backtick (`) */
+.markdown code {
+  padding: .15em .5em;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  border-radius: 4px;
+}
+
+/* enclosed by 3 backticks (```) */
+.markdown pre {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  line-height: 1.5em;
+  /* white-space: pre; */
+  /* white-space: pre-wrap; */
+  /* word-break: break-all; */
+  /* word-wrap: break-word; */
+  white-space: pre;
+  tab-size: 4;
+}
+
+.markdown pre code {
+  padding: 0;
+}
+
+.markdown p {
+  margin-top: 0.75rem;
+  /* margin-bottom: 0.75em; */
+}
+
+.markdown blockquote {
+  padding: .5rem 1rem;
+  margin: .8rem 0;
+  /* color: #7a7a7a; */
+  /* color: var(--grey-d1); */
+  color: var(--text-grey);
+  /* border-left: .25rem solid #e5e5e5; */
+  border-left: .25rem solid var(--grey-l3);
+
+}
+
+.markdown blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown table {
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  /* width: 100%; */
+  vertical-align: middle;
+  min-width: 60%;
+}
+
+.markdown table th {
+  font-weight: 600;
+  text-align: center;
+}
+
+.markdown td, .markdown th {
+  padding: .25rem .5rem;
+  /* border: 1px solid #e5e5e5; */
+  border: 1px solid var(--grey-l3);
+}
+
+.markdown tbody tr:nth-child(odd) td,
+.markdown tbody tr:nth-child(odd) th {
+  /* background-color: #f7f7f7; */
+  background-color: var(--grey-l4);
+ }
+
+.markdown img {
+  margin: 1rem 0;
+  max-width: 100%;
+  -webkit-border-radius:  .25rem;
+  border-radius: .25rem;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.markdown .no-border img {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}

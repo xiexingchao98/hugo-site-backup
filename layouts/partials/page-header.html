@@ -1,0 +1,27 @@
+{{ $url := .URL }}
+<header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <nav class="mdl-navigation">
+          {{ if eq $url "/" }}
+              <a class='mdl-navigation__link is-active' href="/">首页</a>
+          {{ else }}
+              <a class='mdl-navigation__link' href="/">首页</a>
+          {{ end }}
+          {{ range .Site.Menus.main }}
+              {{ if eq $url .URL }}
+              <a class="mdl-navigation__link is-active" href='{{ .URL | absURL }}'>{{ .Name }}</a>
+              {{ else }}
+              <a class="mdl-navigation__link" href='{{ .URL | absURL }}'>{{ .Name }}</a>
+              {{ end }}
+          {{ end }}
+      </nav>
+    </div>
+</header>
+<div class="mdl-layout__drawer">
+  <nav class="mdl-navigation">
+      <a class='mdl-navigation__link' href="/">首页</a>
+      {{ range .Site.Menus.main }}
+        <a class="mdl-navigation__link" href='{{ .URL | absURL }}'>{{ .Name }}</a>
+      {{ end }}
+  </nav>
+</div>

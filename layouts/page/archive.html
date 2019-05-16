@@ -1,0 +1,28 @@
+{{ define "main__content" }}
+<div class="posts mdl-grid">
+  <ul class="mdl-list">
+    {{ if eq .Site.Params.bloggroupby "month" }}
+        {{ $.Scratch.Set "datespec" "2006.1" }}
+    {{ else if eq .Site.Params.bloggroupby "year" }}
+        {{ $.Scratch.Set "datespec" "2006" }}
+    {{ end }}
+    {{ if not ($.Scratch.Get "datespec") }}
+        {{ range .Site.RegularPages.ByDate.Reverse }}
+        {{ partial "li.html" . }}
+        {{ end }}
+    {{ else }}
+    {{ $pages := where .Site.RegularPages "Type" "posts"}}
+      {{ range $pages.ByDate.GroupByDate ($.Scratch.Get "datespec") "desc"}}
+            <li class="mdl-list__item">
+              <h3>
+                <span class="mdl-list__item-primary-content">{{ .Key }}</span>
+              </h3>
+            </li>
+            {{ range .Pages.ByDate.Reverse }}
+                {{ partial "li.html" . }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

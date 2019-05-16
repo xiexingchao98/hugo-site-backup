@@ -4,11 +4,9 @@
   <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
   <!-- <body class="bg-light" data-spy="scroll" data-target="#TableOfContents" data-offset="90"> -->
     <!-- Code that all your templates share, like a header -->
-    
-
     {{ block "header" . }}
-      {{ partial "site-navbar.html" . }} 
-      {{ partial "page-header.html" . }}  
+      {{ partial "site-navbar.html" . }}
+      {{ partial "def-page-header.html" . }}
     {{ end }}
 
     {{ block "main" . }}
