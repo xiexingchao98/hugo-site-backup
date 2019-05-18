@@ -1,4 +1,4 @@
-baseURL: "http://xiexingchao.ink"
+baseURL: "https://xiexingchao.ink"
 builddrafts: false
 languageCode: "zh-Hans"
 canonifyurls: true
@@ -9,7 +9,7 @@ enableEmoji: true
 hasCJKLanguage: true
 summaryLength: 100
 Paginate: 3
-enableGitInfo: true
+enableGitInfo: false
 
 theme: "AllinOne"
 title: "xiexc's blog"
@@ -33,8 +33,16 @@ menus:
     weight: -130
     identifier: "archive"
     url: "/pages/archive/"
-  - name: "下载"
+  - name: "分类"
     weight: -120
+    identifier: "categories"
+    url: "/categories/"
+  - name: "标签"
+    weight: -110
+    identifier: "tags"
+    url: "/tags/"
+  - name: "下载"
+    weight: -100
     identifier: "download"
     url: "http://d.xiexingchao.ink/"
 

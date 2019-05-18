@@ -1,46 +1,44 @@
 {{ define "main__content" }}
-<div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--2-col"></div>
-  <div class="post mdl-cell mdl-cell--8-col">
-        {{ partial "post-header.html" . }}
-        <div class="post__content markdown">
-          {{ .Content }}
+<div class="mdl-cell mdl-cell--2-col"></div>
+<div class="post mdl-cell mdl-cell--8-col">
+      {{ partial "post-header.html" . }}
+      <div class="post__content markdown">
+        {{ .Content }}
+      </div>
+      <!-- Tags -->
+      <!-- <div class="">
+        <div class="col-md-8">
+        {{ if .Params.tags }}
+          <div class="mb-5">
+            {{ partial "tags.html" . }}
+          </div>
+        {{ end }}
         </div>
-        <!-- Tags -->
-        <!-- <div class="">
-          <div class="col-md-8">
-          {{ if .Params.tags }}
-            <div class="mb-5">
-              {{ partial "tags.html" . }}
-            </div>
+      </div> -->
+      <!-- /.Tags -->
+      <!-- Prev & Next -->
+      <!-- <div class="row pt-3">
+        <div class="col-md-6">
+          {{ if .PrevInSection }}
+            <a href={{ .PrevInSection.Permalink }} class="post-meta">{{ i18n "previousPost" }}
+              <div class="pt-2 pb-5 d-flex">
+                <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                <span>{{ .PrevInSection.Title }}</span>
+              </div>
+            </a>
           {{ end }}
-          </div>
-        </div> -->
-        <!-- /.Tags -->
-        <!-- Prev & Next -->
-        <!-- <div class="row pt-3">
-          <div class="col-md-6">
-            {{ if .PrevInSection }}
-              <a href={{ .PrevInSection.Permalink }} class="post-meta">{{ i18n "previousPost" }}
-                <div class="pt-2 pb-5 d-flex">
-                  <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
-                  <span>{{ .PrevInSection.Title }}</span>
-                </div>
-              </a>
-            {{ end }}
-          </div>
-          <div class="col-md-6 text-right" >
-            {{ if .NextInSection }}
-              <a href={{ .NextInSection.Permalink }} class="post-meta">{{ i18n "nextPost" }}
-                <div class="pt-2 pb-5 flex-reverse">
-                  <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
-                  <span>{{ .NextInSection.Title }}</span>
-                </div>
-              </a>
-            {{ end }}
-          </div>
-        </div> -->
-    </div>
-    {{ partial "toc.html" . }}
+        </div>
+        <div class="col-md-6 text-right" >
+          {{ if .NextInSection }}
+            <a href={{ .NextInSection.Permalink }} class="post-meta">{{ i18n "nextPost" }}
+              <div class="pt-2 pb-5 flex-reverse">
+                <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                <span>{{ .NextInSection.Title }}</span>
+              </div>
+            </a>
+          {{ end }}
+        </div>
+      </div> -->
   </div>
+  {{ partial "toc.html" . }}
 {{ end }}
