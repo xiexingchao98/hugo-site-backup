@@ -1,5 +1,11 @@
 {{ define "main__content" }}
-<div class="post-card__container">
+<div class="left-panel mdl-cell--2-col">
+  <div class="taxonomies mdl-shadow--2dp">
+    {{ partial "sidebar-categories.html" . }}
+    {{ partial "sidebar-tags.html" . }}
+  </div>
+</div>
+<div class="post-card__container mdl-cell--8-col">
   {{ $totalpostscount := len (.Data.Pages) }}
   {{ $latestpostscount := .Site.Params.latestpostscount | default $totalpostscount }}
   {{ if gt $latestpostscount 0 }}

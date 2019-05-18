@@ -5,9 +5,9 @@
     <!-- Sidebar -->
     <div class="col-md-3">
       <!-- <hr> -->
-      
+
       {{ partial "sidebar-categories.html" . }}
-      
+
       {{ partial "sidebar-tags.html" . }}
 
       {{ partial "sidebar-series.html" . }}
@@ -29,12 +29,12 @@
               </div>
             {{ end }}
           </div>
-      
+
         {{ if .Content }}
           <div class="post-content markdown">
             {{ .Content }}
           </div>
-        {{ end }}  
+        {{ end }}
       </ul>
       <ul>
         {{ if eq .Site.Params.bloggroupby "month" }}
@@ -59,7 +59,7 @@
       </ul>
     </div>
     <!-- /.Post list -->
-    
+
   </div>
-</main> 
+</main>
 {{ end }}

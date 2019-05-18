@@ -1,33 +1,12 @@
-
-{{ range where .Pages ".Params.tags" "ne" nil }}
-  {{ $.Scratch.Add "tags"  (apply .Params.tags "lower" ".") }}
-{{ end }}
-
-{{ $terms := uniq ($.Scratch.Get "tags") }}
-
-{{ if gt (len $terms) 0 }}
-  <hr>
-  {{ with .Site.Taxonomies.tags }}
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="{{ "tags/" | absLangURL }}">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-tags pr-1" aria-hidden="true"></i> 
-            Featured Tags
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta tags-md" style="margin-left: -8px;">
-        
-        
-        {{ range first 20 (where .ByCount "Name" "in" $terms)  }}
-            <li><a href="{{ "tags/" | absLangURL }}{{ .Name | urlize }}" role="button"><span>{{ .Name }} ({{ .Count }})</span></a></li>
-          
-        {{ end }}
-      </div>
-    </div>
-
-    
-  {{ end }}
+{{ with $.Site.Taxonomies.tags }}
+  <div class="mdl-list tags">
+    <li class="mdl-list__item taxonomies__item">
+      <a class="mdl-list__item-primary-content" href="{{ "tags/" | absLangURL }}">
+        <i class="material-icons">label</i>标签
+      </a>
+    </li>
+    {{ range $key, $value := . }}
+      <li class="mdl-list__item"><a class="mdl-list__item-primary-content" href='{{ "tags/" | absURL }}{{ $key | urlize }}'><span>{{ $key }} ({{ $value.Count }})</span></a></li>
+    {{ end }}
+  </div>
 {{ end }}

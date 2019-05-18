@@ -5,8 +5,10 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     {{ partial "page-header.html" . }}
     <main class="mdl-layout__content">
-      {{ block "main__content" . }}
-      {{ end }}
+      <div class="mdl-grid">
+        {{ block "main__content" . }}
+        {{ end }}
+      </div>
       {{ partial "page-footer.html" . }}
     </main>
   </div>

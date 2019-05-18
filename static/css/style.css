@@ -41,7 +41,7 @@
 }
 
 .post-card__container .mdl-card {
-  margin: .875rem 0;
+  margin-bottom: .875rem;
 }
 
 .has-background-info {
@@ -94,8 +94,14 @@ footer.page-footer a {
   align-items: center;
 }
 
+.taxonomies__item {
+  font-size: 1.5rem;
+  line-height: normal;
+}
 
-
+.taxonomies__item i {
+  padding-right: 6px;
+}
 
 
 /*

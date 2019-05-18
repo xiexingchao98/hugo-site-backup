@@ -1,0 +1,15 @@
+{{ define "main__content" }}
+<div class="mdl-cell--2-col"></div>
+<div class="mdl-cell--6-col">
+  <ul class="mdl-list">
+    <li class="mdl-list__item">
+      <h3>{{ .Title }}</h3>
+    </li>
+    {{ range .Data.Terms.ByCount }}
+      <li class="mdl-list__item">
+        <a href="{{ .Name | urlize }}"><span>{{ .Name }}</span></a>
+      </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
