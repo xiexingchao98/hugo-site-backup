@@ -1,5 +1,7 @@
 {{ define "main__content" }}
-<div class="mdl-cell mdl-cell--2-col"></div>
+<div class="mdl-cell mdl-cell--2-col">
+  {{ partial "toc.html" . }}
+</div>
 <div class="post mdl-cell mdl-cell--8-col">
       {{ partial "post-header.html" . }}
       <div class="post__content markdown">
@@ -40,5 +42,4 @@
         </div>
       </div> -->
   </div>
-  {{ partial "toc.html" . }}
 {{ end }}

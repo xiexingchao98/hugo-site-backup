@@ -111,7 +111,19 @@ footer.page-footer a {
   padding-right: 6px;
 }
 
+.toc {
+  position: sticky;
+  top: 10px;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.toc__title {
+  font-size: 1.25rem;
+}
 
+.toc > ul {
+  padding-left: 0;
+}
 /*
 
 Markdown

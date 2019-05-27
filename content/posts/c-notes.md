@@ -6,6 +6,7 @@ categories:
 tags:
 - c
 draft: true
+toc: true
 ---
 
 ## 字符数组与字符串
@@ -30,7 +31,7 @@ struct employee {
 
 1. 读取到 `int` ，当前最大空间为 `4 Byte` 。
 2. 读取到 `double` ，更新当前最大空间为 `8 Byte` ，需要对前面的 `int` 进行字节填充，填充大小为 `8 Byte - 4 Byte = 4 Byte` ，此时结构体大小为 `8 Byte + 8 Byte = 16 Byte` 。
-3. 读取到 `char` 类型，且此时为最后一个类型，先不用立刻进行字节对齐。 `char` 数组大小为 `20 Byte` ，首先计算总大小 `16 Byte + 20 Byte = 36 Byte` ，此前最大空间为 `8 Byte` ，此时 `36 Byte % 8 Byte = 0` ，满足要求，结束空间分配。倘若 `char` 数组大小为 `7` ，则总大小 `16 Byte + 7 Byte = 23 Byte` ， 由于 `23 Byte % 8 Byte != 0` ，此时需要进行字节填充，取 `8 Byte` 的最小倍数且大于当前总大小（`23 Byte`）， 即结构体的最终大小为 `24 Byte` 。 
+3. 读取到 `char` 类型，且此时为最后一个类型，先不用立刻进行字节对齐。 `char` 数组大小为 `20 Byte` ，首先计算总大小 `16 Byte + 20 Byte = 36 Byte` ，此前最大空间为 `8 Byte` ，此时 `36 Byte % 8 Byte = 0` ，满足要求，结束空间分配。倘若 `char` 数组大小为 `7` ，则总大小 `16 Byte + 7 Byte = 23 Byte` ， 由于 `23 Byte % 8 Byte != 0` ，此时需要进行字节填充，取 `8 Byte` 的最小倍数且大于当前总大小（`23 Byte`）， 即结构体的最终大小为 `24 Byte` 。
 
 Q：为什么要进行字节填充？
 
@@ -135,7 +136,7 @@ int *(*p(int))[3]
 
 如果要得到 `a+b` 的运算结果的 `size` ，考虑这种用法：`sizeof a+b` ， 可是这种用法是错误的。因为 `sizeof` 的优先级比 `+` 高，所以 `sizeof a+b` 会得到 `(sizeof a) + b` 的值。
 
-为了确保得到我们预期的结果，我们需要使用 `()` 来干预运算顺序，比如：`sizeof (a+b)` ， 这样它就会先计算 `a+b` 的值 `sum`，然后计算 `sizeof sum` 。 
+为了确保得到我们预期的结果，我们需要使用 `()` 来干预运算顺序，比如：`sizeof (a+b)` ， 这样它就会先计算 `a+b` 的值 `sum`，然后计算 `sizeof sum` 。
 
 ### 计算变量大小
 
@@ -170,7 +171,7 @@ char c1[] = {'a', 'b'};
 char c2[] = "ab";
 char c3[3] = {'a', 'b'};
 strlen(c1);    // 2
-strlen(c2);    // 
+strlen(c2);    //
 ```
 
 ```c
@@ -194,7 +195,7 @@ char * getChars() {
 ## 三元运算符
 
 ```c
-// condition ? statement1 : statement2; 
+// condition ? statement1 : statement2;
 int a = 1;
 int b = 2;
 int max = a > b ? a : b;
