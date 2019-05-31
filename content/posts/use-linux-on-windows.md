@@ -10,9 +10,9 @@ draft: true
 
 ## 第一步：安装虚拟机软件
 
-常用的虚拟机软件有 Virtual Machine，Virtual Box，Hyper-V（Windows 专业版自带）。
+常用的虚拟机软件有 VMare，Virtual Box，Hyper-V（Windows 专业版自带）。
 
-这里我们使用 Virtual Machine 。
+这里我们使用 VMare 。
 
 下载地址：https://download3.vmware.com/software/wkst/file/VMware-workstation-full-12.5.7-5813279.exe
 
